@@ -1,0 +1,123 @@
+/* Reset CSS */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#main {
+
+}
+
+#header {
+height: 46px;
+background-color: #000;
+position: fixed; /* cố định header */
+/* khi set positon thì mất đi thuộc tính kế thừa
+của block nên set top, right, left = 0 để nó dính sát về các bên */
+top: 0;
+left: 0;
+right: 0;
+}
+#nav {
+    display: inline-block;
+}
+#nav, .subnav {
+    list-style-type: none;
+}
+#nav > li {
+    display: inline-block; 
+}
+#nav li {
+    /* inline: trên 1 hàng; block: giữ lại tính chất khối để đặt kích thước */
+
+    position: relative;
+}
+#nav .subnav{
+    display: none;
+    min-width: 160px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 0  10px rgba(0, 0, 0, 0.3);
+}
+#nav li:hover .subnav {
+    display: block;
+}
+#nav > li:hover > a,
+#nav .subnav li:hover a {
+    color: #000;
+    background-color: #ccc;
+}
+#nav .subnav a {
+    color: #000;
+    padding: 0 12px;
+    line-height: 38px;
+}
+#nav .nav-arrow-down{
+    font-size: 14px;
+}
+/* css trực tiếp vào li cấp 1 */
+#nav > li > a {
+    color: #fff;
+    text-transform: uppercase;
+}
+#nav li a{
+    
+    text-decoration: none;
+    line-height: 46px;
+    padding: 0 24px;
+    display: block;
+}
+/* css button search */
+#header .search-btn{
+    float: right;
+    line-height: 46px; /* căn giữa */
+    padding: 0 21px;
+    
+}
+#header .search-btn:hover{
+    background-color: #f44336;
+    cursor: pointer;
+}
+#header .search-icon{
+    color: #fff;
+    font-size: 20px;
+}
+
+#slider {
+    position: relative;
+    margin-top: 46px;
+    /* để chiều cao luôn = 1 nửa chiều rộng ta set padding-top: 50%
+    50% là chiều ngang của chính thẻ đó */
+    padding-top: 50%;
+    background: url('./images/chicago.jpg') top center / cover no-repeat;
+
+}
+#slider .text-content{
+    position: absolute;
+    bottom: 48px;
+    /* text-align: center; */
+    background-color: #fff;
+    /* căn giữa (đang có position) */
+    left: 50%;
+    transform: translateX(-50%); /* lùi theo trục ngang 50% chiều dài của nó */
+    text-align: center;
+    /* cách 2 để căn giữa thì ta set width của nó thành 100%*/
+}
+#slider .text-heading{
+
+}
+#slider .text-description{
+
+}
+#content {
+}
+
+#footer {
+
+}
